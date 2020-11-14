@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>async函数</title>
+</head>
+
+<body>
+    <script>
+        // 异步编程的解决方案：
+        // 1.生成器函数
+        // 2.promise对象
+        // ES8中引入了async和await函数
+        // async函数的返回值为promise对象
+
+        async function fn() {
+
+            // 返回的结果为一个成功的promise对象
+
+            // return '哈哈哈哈';
+            // return;
+
+            // 跑出一个错误， 返回的结果为一个失败的promise对象
+            // throw new Error("出错啦啦啦啦啦！")
+
+
+            // 返回的结果为promise类型的对象,fn函数返回的对象也是一个成功的promise对象，函数返回的成功的值就是async所在的fn函数的return返回的成功的值
+            return new Promise((resolve, reject) => {
+                resolve("成功的数据");
+            })
+        }
+        const result = fn();
+        console.log(result);  //输入结果为promise对象
+
+    </script>
+</body>
+
+</html>
